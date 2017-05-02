@@ -1,0 +1,44 @@
+<ion-view>
+  <ion-content>
+    <h2 class="center cat"> Plats vendus </h2>
+    <p class="center size-18">{{ par }}</p>
+    <div class="topMarge center bottomMarge40">
+    <button class="button button-stable greel short" ng-click="day()">Jour</button>
+    <button class="button button-stable  greel short" ng-click="week()">Semaine</button>
+    <button class="button button-stable  greel short" ng-click="month()">Mois</button>
+    <button class="button button-stable  greel short" ng-click="year()">Année</button>
+</div>
+
+
+    <ion-list>
+    <div class="auto width-800 padding-left-150">
+        <p class="left width-300 middle size-20">Produits</p>
+        <p class="left width-300 middle size-20">Quantité</p>
+      </div>
+      <div class="list auto width-800 topMarge" >
+        <ion-item class="item " ng-repeat="vente in ventes">
+          <img src="{{vente.url_photo }}" height="54" width="54" class="auto left">
+          <div class="left margin-top-15">
+            <b class="left width-290">{{vente.nom_recette}}</b>
+            <b class="left width-290">{{vente.quantite_vente}}</b>
+            <i class="icon ion-chevron-right" style="color:#ccc; font-size:16px;"></i>
+          </div>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <p class="topMarge size-20 width-800 text-left auto">Ajouter un plat</p>
+
+    <form ng-submit="add()">
+          <div class="center">Nom du plat</div>
+          <input type="text" class="inputb center" list="recid" placeholder="Exemple : Gratin de Pommes de Terre" ng-model="venteData.nom"/>
+            <datalist id="recid">
+                <option ng-repeat="recette in recettes" value="{{recette.id_recette}}">{{recette.nom_recette}}</option>
+            </datalist>
+          <div class="center">Quantité vendue </div>
+          <input type="text" class="center inputb" placeholder="Exemple : 25" ng-model="venteData.quantite">
+
+          <button class="centre button button-stable topMarge greel" type="submit">Ajouter la vente</button>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,73 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <h2 class="center cat"> Ajouter une recette </h2>
+    <p class="center topMarge30 size-18" >
+      Veuillez compléter les champs afin d'ajouter votre recette
+    </p>
+
+    <p class="text-green topMarge"> Decrivez votre recette</p>
+
+    <form ng-submit="add()">
+
+        <div class="left margin-left-30">
+          <div class="left">
+            <div class="size-15">Nom de la recette</div>
+            <input type="text" class="inputb" placeholder="Exemple : Gratin de Pommes de Terre" ng-model="recipeData.nom">
+          </div>
+          <div class="left margin-left-30">
+            <div class="size-15">Durée </div>
+            <input type="text" class="width-200 inputb" placeholder="Exemple : 25 min" ng-model="recipeData.duree">
+          </div>
+        </div>
+
+        <div class="left margin-left-30">
+          <div class="size-15">Description de la recette </div>
+          <input type="text" class="height-180 width-730 inputb" placeholder="Exemple : Mélangez 5gr de farine..." ng-model="recipeData.descr">
+        </div>
+
+        <div class="clear"></div>
+
+      <p class="text-green topMarge30 margin-left-30"> Choisissez vos produits</p>
+
+        <div class="left margin-left-30 topMarge30">
+          <div class="left">
+            <span class="center size-15">Nom du Produit</span>
+            <input type="text" class="inputb center" list="prodid" placeholder="Exemple : Saumon Fumé" ng-model="recipeData.prod[0]['produit_id']"/>
+              <datalist id="prodid">
+                  <option ng-repeat="product in products" value="{{product.id_produit}}">{{product.nom_produit}}</option>
+              </datalist>          </div>
+          <div class="left margin-left-30">
+            <div class="size-15">Quantité</div>
+            <input type="text" class="width-200 inputb" placeholder="Exemple : 5" ng-model="recipeData.prod[0]['quantite']">
+          </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="left margin-left-30 topMarge30">
+          <div class="left">
+            <div class="size-15">Nom du Produit</div>
+            <input type="text" class="inputb" placeholder="Exemple : Bechamel" ng-model="recipeData.prod[1]['produit_id']">
+          </div>
+          <div class="left margin-left-30">
+            <div class="size-15">Quantité</div>
+            <input type="text" class="width-200 inputb" placeholder="Exemple : 200 ml" ng-model="recipeData.prod[1]['quantite']">
+          </div>
+          <div class="clear"></div>
+
+          <div class="auto add-product">
+            <button class=" margin-left-0 btn-add left">+</button>
+            <span class="center size-15 left width-130 topMarge20 margin-left-10">Ajouter un produit</span>
+          </div>
+        </div>
+        <div class="clear"></div>
+
+      <p class="text-green topMarge30 margin-left-30"> Ajouter des images</p>
+
+          <div class="size-15">Image de la recette</div>
+          <input type="text" class="inputb" ng-model="recipeData.image">
+
+          <button class="centre button button-stable topMarge greel" type="submit">Enregistrer</button>
+    </form>
+
+  </ion-content>
+</ion-view>

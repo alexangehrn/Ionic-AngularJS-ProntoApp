@@ -1,0 +1,26 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <h2 class="center cat"> Votre Produit </h2>
+
+    <div id="printSectionId" class="topMarge">
+    <img src="{{ product.image_produit }}" class="imgpr">
+    <div class="txtpr">
+      <h2 > {{ product.nom_produit }}</h2>
+
+      Code Barre : {{ product.code_barre_produit }}<br/>
+      Quantité : {{ product.quantite_produit }}<br/>
+      Poids : {{ product.poids_produit }} kg<br/>
+      Prix : {{ product.prix_produit }} €<br/>
+      Fournisseur : {{ product.nom_fournisseur }}<br/>
+      Date Entrée : {{ product.entree_produit }}<br/>
+      <b>Date Péremption : {{ product.peremption_produit }}</b><br/>
+    </div>
+    <div class="clear"></div>
+
+    </div>
+    <p class="center topMarge">
+      <button class="button button-stable greel " ng-click="print('printSectionId')">Imprimer l'etiquette</button>
+    </p>
+
+  </ion-content>
+</ion-view>

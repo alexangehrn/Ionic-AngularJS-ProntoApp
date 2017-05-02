@@ -1,0 +1,19 @@
+<ion-view>
+  <ion-content>
+    <div ng-style="loginForm">
+    <h2 class="topMarge0 center cat"> Connexion </h2>
+    <form id="loginForm" class="center" ng-submit="doLogin()" >
+
+          <span class="center size-15">Email</span>
+          <input type="text" class="inputb center" ng-model="loginData.username">
+
+          <span class="center size-15">Mot de passe</span>
+          <input type="password" class="inputb center" ng-model="loginData.password">
+
+        <label >
+          <button class="sub button button-stable greel" type="submit">Se connecter</button>
+        </label>
+    </form>
+  </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <h2 class="center cat"> Commander des Vins </h2>
+    <p class="center topMarge30 size-18" >
+      Veuillez compléter les champs afin de commander vos vins
+    </p>
+    <form ng-submit="order()" class="center">
+        <span class="center size-15">Fournisseur</span>
+        <input type="text" class="inputb center" list="fournid" placeholder="Exemple : La belle étoile" ng-model="commandData.fournisseur"/>
+          <datalist id="fournid">
+              <option ng-repeat="fourn in fourns" value="{{fourn.id_fournisseur}}">{{fourn.nom_fournisseur}}</option>
+          </datalist>
+        <span class="center size-15">Nom du Vin</span>
+        <input type="text" class="inputb center" placeholder="Exemple : Chablis 2009" ng-model="commandData.nom">
+
+          <span class="center size-15">Quantité</span>
+          <div class="add-remove">
+            <button class="btn-remove left" type="button" ng-click="minusc()">-</button>
+            <input type="number" class="inputb center left" placeholder="Exemple : 20" ng-model="commandData.quantite">
+            <button class="btn-add left" type="button" ng-click="plusc()">+</button>
+          </div>
+          <div class="clear"></div>
+          <button class="button topMarge button-stable greel" type="submit size-15">Commander</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

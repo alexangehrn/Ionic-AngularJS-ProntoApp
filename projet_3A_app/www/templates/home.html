@@ -1,0 +1,35 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <ion-list>
+      <div class = "row">
+        <div class="col Menu center pointer" ng-style="menu" >
+          <img src="img/icone-tableaudebord.png" />
+          <h2 class="thin paragraph center topMarge margin-top-23">Tableau de Bord</h2>
+        </div>
+        <div class="col Menu center pointer" ng-style="menu" ng-click="seRedirect()">
+          <img src="img/icone-produit.png" />
+          <h2 class="thin paragraph center topMarge">Produits</h2>
+        </div>
+        <div class="col Menu center pointer" ng-style="menu" ng-click="ventesRedirect()">
+          <img src="img/icone-plat.png" />
+          <h2 class="thin paragraph center topMarge">Plats & Ventes</h2>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="col Menu center pointer" ng-style="menu" ng-click="reciRedirect()">
+          <img src="img/icone-recette.png" />
+          <h2 class="thin paragraph center topMarge">Livre de recettes</h2>
+        </div>
+        <div class="col Menu center pointer" ng-style="menu" ng-click="vinRedirect()">
+          <img src="img/icone-vin.png" />
+          <h2 class="thin paragraph center topMarge">Vins</h2>
+        </div>
+        <div class="col Menu center pointer" ng-style="menu" ng-click="statRedirect()">
+          <img src="img/icone-statistique.png" />
+          <h2 class="thin paragraph center topMarge">Statistiques</h2>
+        </div>
+      </div>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

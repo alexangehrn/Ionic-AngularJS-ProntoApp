@@ -1,0 +1,39 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <h2 class="center cat"> Entrée de Produits</h2>
+    <p class="center topMarge30 size-18">
+      Veuillez compléter les champs afin d'ajouter votre produit aux stocks
+    </p>
+    <form ng-submit="enter()" class="center bott">
+          <span class="center size-15">Code Barre</span>
+          <input class="inputb center" type="text" ng-model="productData.barre" placeholder="Exemple : 2FA4T5202">
+          <span class="center size-15">Nom du Produit</span>
+          <input type="text" class="inputb center" list="prodid" placeholder="Exemple : Saumon Fumé" ng-model="productData.produit"/>
+            <datalist id="prodid">
+                <option ng-repeat="product in products" value="{{product.id_produit}}">{{product.nom_produit}}</option>
+            </datalist>
+          <span class="center size-15">Quantité</span>
+          <div class="add-remove">
+            <button class="btn-remove left"  type="button" ng-click="minus()">-</button>
+            <input type="number" class="inputb center left" ng-model="productData.quantite">
+            <button class="btn-add left"  type="button" ng-click="plus()">+</button>
+          </div>
+          <div class="clear"></div>
+
+          <span class="center size-15">Poids</span>
+          <input type="text" class="inputb center" placeholder="Exemple : 500 gr" ng-model="productData.poids">
+          <span class="center size-15">Prix</span>
+          <input type="text" class="inputb center" placeholder="Exemple : 110 €" ng-model="productData.prix">
+          <span class="center size-15">Fournisseur</span>
+          <input type="text" class="inputb center" list="fournid" placeholder="Exemple : La belle étoile" ng-model="productData.fournisseur"/>
+            <datalist id="fournid">
+                <option ng-repeat="fourn in fourns" value="{{fourn.id_fournisseur}}">{{fourn.nom_fournisseur}}</option>
+            </datalist>
+          <span class="center size-15">Date de Péremption</span>
+          <input type="date" class="inputb center" ng-model="productData.peremption">
+          <button class="sub button button-stable greel" type="submit">Ajouter</button>
+
+    </form>
+
+  </ion-content>
+</ion-view>

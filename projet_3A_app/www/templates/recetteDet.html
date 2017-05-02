@@ -1,0 +1,35 @@
+<ion-view view-title="Home">
+  <ion-content>
+      <div>
+        <div class="topMarge center width-800 auto">
+          <img src="{{ recette[0]['url_photo'] }}" class="img-recette left"/>
+          <div class="left text-left margin-left-30">
+            <h2 class="recette-title">{{ recette[0]['nom_recette'] }}<br/></h2>
+            <div class="topMarge30">
+              <img src="img/time.png" alt="timer" class="width-22 left">
+              <p class="left size-17 margin-left-10"> {{ recette[0]['duree_recette'] }} minutes<br/> </p>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="size-15 topMarge center width-800 auto text-left">
+          <p class="margin-left-0 text-green bottomMarge20">Ingrédients nécéssaires</p>
+          <ul>
+             <li ng-repeat="recet in recette" class="topMarge5">
+              - {{ recette[0][15] }} {{ recette[0][8] }} <br/>
+            </li>
+          </ul>
+        </div>
+        <div class="size-15 topMarge center width-800 auto text-left">
+          <p class="margin-left-0 text-green bottomMarge20">Ingrédients nécéssaires</p>
+            Detail de la recette : {{ recette[0]['descr_recette'] }}<br/>
+            Produits :
+        </div>
+
+    </div>
+
+    <p class="center topMarge">
+      <button class="button button-stable " ng-click="home()">Retour au menu</button>
+    </p>
+  </ion-content>
+</ion-view>

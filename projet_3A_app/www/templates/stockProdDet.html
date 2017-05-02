@@ -1,0 +1,61 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <h2 class="center cat"> Votre Produit </h2>
+
+    <div id="printSectionId" class="topMarge">
+      <img src="{{ product[0]['image_produit'] }}" class="imgpr">
+      <div class="txtpr">
+        <h2 > {{ product[0]["nom_produit"] }}</h2><br/>
+        Quantité : {{ product[0]["quantite_produit"] }}
+    </div>
+  <div class="clear"></div>
+    </div>
+    <ion-list>
+      <div class="list topMarge width-800 auto" >
+        <ion-item class="item " href="">
+            <div class="col_md_2">
+            Code Barre
+            </div>
+            <div class="col_md_2 width-80">
+            Quantité
+          </div>
+          <div class="col_md_2 width-80">
+            Poids
+          </div>
+          <div class="col_md_2">
+            Fournisseur
+          </div>
+          <div class="col_md_2 width-200">
+            Date Entree
+          </div>
+          <div class="col_md_2 width-80">
+            Date Peremption
+          </div>
+        </ion-item>
+        <ion-item class="item item-icon-right" ng-repeat="produc in product"  href="#/stockComDet/{{produc[0]}}">
+          <div class="col_md_2">
+            {{produc.code_barre_produit}}
+          </div>
+          <div class="col_md_2 width-80">
+            {{produc.quantite_produit}}
+          </div>
+          <div class="col_md_2 width-80">
+            {{produc.poids_produit}}
+          </div>
+          <div class="col_md_2">
+            {{produc.nom_fournisseur}}
+          </div>
+          <div class="col_md_2 width-200">
+            {{produc.entree_produit}}
+          </div>
+          <div class="col_md_2 width-80">
+            {{produc.peremption_produit}}
+          </div>
+          <i class="icon ion-chevron-right" style="color:#ccc; font-size:16px;"></i>
+
+        </ion-item>
+      </div>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view>
+  <ion-content>
+    <h2 class="center cat bottomMarge60"> Votre Stock </h2>
+    <ion-list>
+      <div class="auto width-800 padding-left-125">
+        <p class="left width-100 middle size-16 width-150">Produits</p>
+        <p class="left width-100 middle size-16 width-150">Quantité</p>
+        <p class="left width-100 middle size-16 width-150">Poids</p>
+        <p class="left width-100 middle size-16 width-150">Prix</p>
+      </div>
+      
+      <div class="list auto width-800 topMarge" >
+        <ion-item class="item item-icon-right" ng-repeat="product in products"  href="#/stockProdDet/{{product.id_produit}}">
+        		<div class="col_md_2"><img src="{{product.image_produit }}" height="54" width="54" class="auto"></div>
+            <div class="padding-top-17">
+              <div class="col_md_2 left width-150"> {{product.nom_produit}}</div>
+              <div class="col_md_2 left width-150"> {{product.quantite}}</div>
+              <div class="col_md_2 left width-150"> {{product.poids}} gr</div>
+              <div class="col_md_2 left width-150"> {{product.prix}} €</div>
+            </div>
+              <i class="icon ion-chevron-right" style="color:#ccc; font-size:16px;"></i>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

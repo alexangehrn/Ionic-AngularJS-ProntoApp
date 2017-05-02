@@ -1,0 +1,22 @@
+<ion-view>
+  <ion-content>
+    <h2 class="center cat bottomMarge40">Liste des recettes </h2>
+    <ion-list>
+      <div class="auto width-800 padding-left-150">
+        <p class="left width-300 middle size-20">Produits</p>
+        <p class="left width-300 middle size-20">Auteur</p>
+      </div>
+      <div class="list auto width-800 topMarge" >
+        <ion-item class="item item-icon-right" ng-repeat="recette in recettes"  href="#/recetteDet/{{recette.id_recette}}">
+          <img src="{{recette.url_photo }}" height="54" width="54" class="auto">
+            <div class="recette-style">
+              <div class="left width-300"><b class="weight-400">{{recette.nom_recette}}</b></div>
+              <b class="weight-400">{{recette.prenom_user}} {{recette.nom_user}}</b>
+            </div>
+            <div class="clear"></div>
+            <i class="icon ion-chevron-right" style="color:#ccc; font-size:16px;"></i>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
